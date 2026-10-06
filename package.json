@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
-  "description": "个人核对方法备忘 + 一次真实代码核对过程的复盘（非通用技能库作品）：证据分级 L1–L5、8 条核对谬误目录、12 项动手前自查清单。提供的是提醒，不是新能力。",
+  "description": "证据纪律：代码跟进与核对方法（个人自用）",
   "main": "lib/index.js",
   "exports": {
     ".": "./lib/index.js",

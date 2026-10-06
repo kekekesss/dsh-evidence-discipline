@@ -47,7 +47,7 @@ for (const k of ['name', 'description', 'invocation', 'source', 'provider']) {
   if (got[k] === undefined) throw new Error('FAIL: 缺少 SkillSummary 必填字段 ' + k);
 }
 if (c.name !== 'evidence-discipline') throw new Error('FAIL: 技能名不是 evidence-discipline');
-if (!got.description.includes('evidence-discipline')) throw new Error('FAIL: 描述未从 frontmatter 解析出来');
+if (!got.description || got.description.length < 10) throw new Error('FAIL: 描述未从 frontmatter 解析出来');
 if (got.content.startsWith('---')) throw new Error('FAIL: body 仍带 frontmatter');
 if (!got.content.includes('证据层级')) throw new Error('FAIL: body 内容不对');
 

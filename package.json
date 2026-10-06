@@ -1,0 +1,33 @@
+{
+  "name": "dsh-evidence-discipline",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Evidence-first follow-up discipline: how to verify claims about a codebase, audit someone else's changes, and keep an honest evidence ladder.",
+  "main": "lib/index.js",
+  "exports": {
+    ".": "./lib/index.js",
+    "./skill": "./SKILL.md",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "SKILL.md",
+    "cordis.patch.yml",
+    "README.md"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    }
+  },
+  "peerDependencies": {
+    "@deepseek-ai/dsh-skill": "*"
+  },
+  "peerDependenciesMeta": {
+    "@deepseek-ai/dsh-skill": {
+      "optional": true
+    }
+  },
+  "license": "MIT"
+}

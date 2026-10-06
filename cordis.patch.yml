@@ -1,0 +1,8 @@
+# evidence-discipline bundle patch
+#
+# 把插件行插入当前 profile 的 roster。行是「按包名的裸插件」：
+# exports["."] 在 Host 进程加载（本包不注册能力），
+# 真正的产出是 SKILL.md —— 由 exports["./skill"] 暴露，被技能子系统收集。
+- insert:
+    - id: evidence-discipline
+      name: 'dsh-evidence-discipline'

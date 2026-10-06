@@ -1,6 +1,6 @@
 ---
 name: evidence-discipline
-description: "代码跟进与核对方法：L1–L5 证据分级、8 条核对谬误、12 项动手前自查清单。Use when auditing changes, verifying a claim about code, comparing against a backup, or on 核对 / 跟进 / 复盘 / 这份交接 / check / verify."
+description: "过项目 / 审查代码时的核对与验证方法，用来降低幻觉率：L1–L5 证据分级、8 条常见误判、12 项动手前自查清单。Use whenever reviewing, auditing, or taking over a project / codebase / someone else's changes — 过项目 / 审查 / 评审 / 核对 / 跟进 / 复盘 / 这份交接 / review / audit / verify / check — and before asserting any bug, security, or data-loss claim."
 ---
 
 # 证据纪律 · 代码跟进与核对方法
@@ -10,9 +10,14 @@ description: "代码跟进与核对方法：L1–L5 证据分级、8 条核对�
 
 ## 何时加载
 
-- 用户让你"看一下别人改的""核对这份交接""检查项目有没有问题"
+**默认动作**：用户要求"过项目""审查/评审代码""看看这个项目有什么问题""接手别人改的东西"时，
+**先加载本技能再动手**。目的是**降低幻觉率**——每个结论都必须落到证据级别上，
+没读到的就写"待核对"，不写"看起来是这样"。
+
+- 用户让你"过一遍这个项目""看一下别人改的""核对这份交接""检查项目有没有问题"
 - 你要断言某个安全/资金/并发缺陷存在或不存在
 - 你在写交接、回执、评审结论、修复优先级
+- 你要引用别人的结论（文档、README、他人复现）而不打算自己核实
 
 ---
 

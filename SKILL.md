@@ -1,12 +1,15 @@
 ---
 name: evidence-discipline
-description: "Evidence-first follow-up and claim-verification discipline for working on an unfamiliar, inherited, or partially-changed codebase. Covers the evidence ladder (code read vs local test vs real environment), auditing another agent's changes from a backup/diff, tracing control flow and exception shapes, separating verified facts from inherited assumptions and product policy, and avoiding over-claiming. Use when reviewing someone else's changes, verifying a claim about code, auditing a handoff brief, comparing against a backup, or when the user says check / verify / 核对 / 跟进 / 复盘 / 这份交接."
+description: "Personal evidence-discipline memo distilled from ONE real code-audit session — a working checklist, NOT a general-purpose capability skill. Contains an L1–L5 evidence ladder (never let a lower rung stand in for a higher one), a catalogue of 8 verification fallacies (each from a real misjudgement), and a 12-item pre-flight checklist. Use when auditing another agent's changes, verifying a claim about code, comparing against a backup, or when the user says 核对 / 跟进 / 复盘 / 这份交接 / check / verify."
 ---
 
 # 证据纪律 · 代码跟进与核对方法
 
 用于**接手一个不熟悉的项目、核对他人改动、或验证某条技术结论**时。
 目标只有一个：**让每句结论都对得起它的证据**。
+
+> **定位**：个人备忘 + 一次真实核对的复盘，不是通用能力技能。它给的是**提醒**，不是新能力；
+> 8 条谬误全部来自同一个会话里的亲身错误，样本量 = 1。
 
 ## 何时加载
 

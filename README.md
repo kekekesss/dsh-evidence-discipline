@@ -58,6 +58,30 @@ dsh plugin --profile <profile> add link:<本仓库绝对路径>
    仅做「移除 + 重装」**不会**重新导入模块——`apply()` 不会再次执行，技能也不会出现。
    **需要重启应用或在一个新进程里加载。**
 
+3. **`apply()` 里不要直接访问 `ctx.<service>`。** cordis 会抛
+   `cannot get property "skills" without inject`——服务只能经由 `inject` 拿到：
+
+   ```js
+   // ✗ 抛异常：typeof ctx.skills
+   // ✓ 正确：在 inject 回调里用 skillCtx.skills
+   ```
+
+### 排查：装了但没生效（按顺序查，别猜）
+
+1. **先看入口能否被 import。** 以 profile 目录为基准：
+   `node --input-type=module -e "import('dsh-evidence-discipline').then(m=>console.log(Object.keys(m)))"`
+   —— 能打印出 `apply`，说明模块本身没问题，问题在挂载或注册。
+2. **主动逼出 activation 错误。** ⚠️ `install_bundle` 可能返回
+   `application: applied, warnings: []`，而该入口其实**激活失败**（本包就踩过：错误被静默吞掉）。
+   用 `plugin_manager action: set_plugin target: 'include:<你的 patchId>' enabled:false` 再 `enabled:true`
+   —— **真实报错会出现在返回里，含调用栈与行号**。
+3. **报错行号对不上 = 宿主持有旧模块。** 若报错指向已不存在的行号，说明必须**重启应用**；
+   toggle enabled 不会重新 import。
+
+⚠️ **别拿"日志文件"当证据。** 如果那行日志本身可能抛异常或被静默吞掉，
+它的沉默**不能**证明代码没执行——我因此得出过"apply 从未被调用"的错误结论，
+而实际上它一直在被调用、只是我的诊断行先抛了异常。**会自己失败且静默的仪器不是证据。**
+
 验证（重启后）：
 
 ```bash

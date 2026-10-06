@@ -88,6 +88,7 @@ plugin_manager  action: remove_bundle  target: dsh-evidence-discipline
 
 ```
 SKILL.md             技能正文（frontmatter 的 name/description 是触发面，也是单一数据源）
+RULES.md             代码与项目验证规则**原文逐字**（效力来源；与 SKILL.md §1.4 冲突时以它为准）
 lib/index.js         Host 插件：apply() 时向 skills 服务注册 provider
 index.js             兼容 shim（转发到 lib/index.js）
 cordis.patch.yml     bundle patch：把插件行插入 profile roster

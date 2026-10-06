@@ -13,6 +13,7 @@
   "files": [
     "lib/index.js",
     "SKILL.md",
+    "RULES.md",
     "cordis.patch.yml",
     "README.md"
   ],

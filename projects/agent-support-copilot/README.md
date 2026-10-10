@@ -45,13 +45,3 @@ curl -X POST http://localhost:8787/api/chat \
 ## 模型与数据层
 
 项目保留了清晰的 Agent / Tool 边界和 OpenAI-compatible 模型适配器。知识库可以替换为 PostgreSQL + pgvector，订单和工单工具可以替换为真实的业务 API，前端可以升级为 React/Next.js 并接入 SSE 流式输出。
-
-## 简历可写版本
-
-**Agent Support Copilot｜全栈 Agent 客服系统**  
-独立开发｜TypeScript / Node.js / HTML CSS JS
-
-- 设计 Agent 编排层，完成订单查询、规则检索、人工工单 3 类工具调用，并用 `traceId` 记录计划、工具调用、工具结果和最终回答。
-- 实现会话记忆、关键词检索、来源引用和 20 条上下文窗口；对工单创建采用“生成计划—用户确认—执行”的两阶段流程，避免未经授权修改外部状态。
-- 使用 Node.js 原生 HTTP API 提供健康检查、聊天和确认接口，配套浏览器端操作台、响应式布局和 Node Test Runner 自动化测试。
-

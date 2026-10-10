@@ -1,0 +1,13 @@
+{
+  "name": "agent-support-copilot",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "A production-minded AI support copilot with tool calling, memory, retrieval, audit logs, and a browser UI.",
+  "scripts": {
+    "dev": "node --experimental-strip-types src/index.ts",
+    "start": "node --experimental-strip-types src/index.ts",
+    "test": "node --experimental-strip-types --test test/agent.test.ts"
+  }
+}
+
